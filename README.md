@@ -36,23 +36,24 @@ For deploying the backend, we need to follow the steps as provided in this blog:
 
 To run the frontend locally, follow the steps:
 
-    1. We need to create https certificate and save it. 
+1. We need to create https certificate and save it. 
    
-    2. Allowing Origins for Amazon Connect:
-        - Go to AWS console and go to the Amazon Connect service.
-        - Go to the "Approved origins" section
-        - Click on the "Add domain" button
-        - Add the domain name of the frontend application such as "https://localhost:3000" (if that is the one you will be using to run the frontend locally or come back after running the app with https locally)
+2. Allowing Origins for Amazon Connect:
+   - Go to AWS console and go to the Amazon Connect service.
+    - Go to the "Approved origins" section
+    - Click on the "Add domain" button
+    - Add the domain name of the frontend application such as "https://localhost:3000" (if that is the one you will be using to run the frontend locally or come back after running the app with https locally)
   
-    3. Editing CORS policies for API Gateway:
-        - Go to the AWS console and go to the API Gateway service.
-        - Go to the "mlcc-placecall-api" API and click on the "Enable CORS" button.
-        - Edit the "Access-Control-Allow-Origin" to add the domain name of the frontend application such as "https://localhost:3000" (if that is the one you will be using to run the frontend locally or come back after running the app with https locally) or for testing purposes, you can add "*".
+3. Editing CORS policies for API Gateway:
+   - Go to the AWS console and go to the API Gateway service.
+    - Go to the "mlcc-placecall-api" API and click on the "Enable CORS" button.
+     - Edit the "Access-Control-Allow-Origin" to add the domain name of the frontend application such as "https://localhost:3000" (if that is the one you will be using to run the frontend locally or come back after running the app with https locally) or for testing purposes, you can add "*".
   
-    4. Editing CORS policy for the Lambda function for "mlcc-Transcribe-Polly":
-        - Go to the AWS console and go to the Lambda service.
-        - Go to the "mlcc-Transcribe-Polly" Lambda function.
-        - Edit the code to edit the "Access-Control-Allow-Origin" to add the domain name of the frontend application or for testing purposes, you can add "*".
+4. Editing CORS policy for the Lambda function for "mlcc-Transcribe-Polly":
+   - Go to the AWS console and go to the Lambda service.
+   - Go to the "mlcc-Transcribe-Polly" Lambda function.
+    - Edit the code to edit the "Access-Control-Allow-Origin" to add the domain name of the frontend application or for testing purposes, you can add "*".
+        
 ```javascript
 'headers': {
     'Access-Control-Allow-Headers': 'Content-Type',
@@ -60,18 +61,21 @@ To run the frontend locally, follow the steps:
     'Access-Control-Allow-Methods': 'OPTIONS,POST,GET'
 }
 ```
-    5. Create a .env file in the root directory of the frontend and add the following:
-        - VITE_WS_ENDPOINT= "websocket endpoint of the API Gateway"
-        - VITE_CCP_URL= "Amazon Connect CCP URL"
-        - VITE_AWS_REGION= "AWS Region"
-        - VITE_ALLOWED_ORIGIN_1= "Allowed Origin 1 for your application that you added for Amazon Connect"
-        - VITE_ALLOWED_ORIGIN_2= "Allowed Origin 2 for your application that you added for Amazon Connect"
 
-    6. In the `vite.config.js` file, add the certificate Key and Certificate Path.
+5. Create a .env file in the root directory of the frontend and add the following:
+   ```
+    - VITE_WS_ENDPOINT= "websocket endpoint of the API Gateway"
+    - VITE_CCP_URL= "Amazon Connect CCP URL"
+    - VITE_AWS_REGION= "AWS Region"
+    - VITE_ALLOWED_ORIGIN_1= "Allowed Origin 1 for your application that you added for Amazon Connect"
+    - VITE_ALLOWED_ORIGIN_2= "Allowed Origin 2 for your application that you added for Amazon Connect"
+   ```
+
+7. In the `vite.config.js` file, add the certificate Key and Certificate Path.
    
-    7. In the `/components/inputTextForTranslation/InputTextForTranslation.jsx` file, add the API Gateway URL for the "mlcc-placecall-api" REST API.
+8. In the `/components/inputTextForTranslation/InputTextForTranslation.jsx` file, add the API Gateway URL for the "mlcc-placecall-api" REST API.
 
-    8. Run the following command to install the dependencies:
+9. Run the following command to install the dependencies:
 ```bash
 npm install
 npm run dev
