@@ -1,0 +1,167 @@
+.app-container {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  padding: 20px;
+}
+
+body {
+  font-family: 'Noto Sans Oriya', sans-serif;
+}
+
+
+.header {
+  background-color: #002b5b;
+  color: white;
+  padding: 20px;
+  font-weight: bold;
+  height:170px;
+ }
+ 
+ 
+ .header .header-title {
+  font-weight: bold;
+ }
+ 
+ 
+ .header-title {
+  font-size: 7rem;
+  font-weight: bold;
+  margin: 0;
+ }
+ 
+ 
+ .phone-panel {
+  background-color: #ffffff;
+  padding: 20px;
+  border-radius: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+ }
+ 
+ 
+ .quick-responses {
+  background-color: #002b5b;
+  border-radius: 8px;
+  padding: 10px 15px;
+  color: white;
+  font-family: Arial, sans-serif;
+  position: relative;
+  overflow: hidden;
+  margin-top: 20px; 
+ }
+ 
+ 
+ .quick-responses-lower {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 85%; 
+  background-color: #d7ecf7; 
+  z-index: 0; 
+  border-radius: 0 0 8px 8px;
+ }
+ 
+ 
+ .quick-responses-content {
+  position: relative;
+  z-index: 1; 
+ }
+ 
+ 
+ .quick-responses-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+ }
+ 
+ 
+ .quick-responses-title {
+  margin: 0;
+  font-weight: bold !important; 
+ }
+ 
+ 
+ .quick-responses-list {
+  list-style-type: none;
+  padding: 0; 
+  margin: 0; 
+  color: black; 
+  font-size: 0.8rem;
+  font-weight: 300;
+  margin-top: 50px;
+  
+ }
+ 
+ 
+ .quick-responses-list li {
+  margin-bottom: 25px;
+  overflow: hidden; 
+  text-overflow: ellipsis; 
+  white-space: nowrap; 
+  
+ }
+ 
+ 
+ .quick-responses .MuiPagination-root {
+  display: inline-flex;
+ }
+ 
+ 
+ .quick-responses .MuiPaginationItem-root {
+  color: black;
+ }
+ 
+ 
+ .quick-responses .Mui-selected {
+  background-color: #ffffff !important;
+  color: #002b5b !important;
+  border-radius: 50%;
+ }
+
+/* -- tool tip */
+.entity-highlight {
+  position: relative;
+  display: inline-block;
+  z-index: 10000;
+}
+
+.entity-highlight::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  bottom: -25px;
+  left: 50%;
+  transform: translateX(-50%);
+  padding: 4px 8px;
+  background-color: #000;
+  color: white;
+  font-size: 12px;
+  white-space: nowrap;
+  border-radius: 4px;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+  z-index: 100000 !important;
+  pointer-events: none;
+}
+
+.entity-highlight:hover::after {
+  visibility: visible;
+  opacity: 1;
+}
+
+/* Add single line spacing between text segments */
+.transcript-row {
+  position: relative;
+  z-index: 1000;
+  margin-bottom: 1em; 
+  display: block; 
+}
+
+/* Container padding for tooltip visibility */
+.MuiBox-root {
+  padding-bottom: 30px !important;
+}
