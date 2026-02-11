@@ -1,19 +1,7 @@
+# Multilingual Contact Center
+
 ## Overview:-
 This is a react based application for the multilingual contact center solution that helps call centres overcome language barriers between call center agents and customers. Using AWS services like Amazon Connect, Amazon Transcribe, Amazon Translate, and Amazon Polly, this solution provides near real-time translation capabilities, allowing agents to effectively communicate with customers who speak different languages.
-
-## Description:-
-This solution provides near real-time translation chat support through Amazon Connect, Amazon Transcribe, and serverless code through AWS Lambda. Translations that would take hours to complete manually are performed in moments and read back, in life-like speech, and in a member’s chosen language through Amazon Polly. This solution is designed to be a cost-effective, scalable, and secure solution for organizations that need to provide multilingual support to their customers.
-
-![Frontend Dashboard Image](assests/images/mlcc-demo.png)
-
-## High Level Architecture:-
-
-The architectural diagram for AWS Backend is:
-
-![API Reference Architecture](assests/images/MLCC-Architecturev1-2.drawio-3.png)
-
-# Prerequisites
-For the prerequisites, we need to have the following:
 
 ## Disclaimers
 Customers are responsible for making their own independent assessment of the information in this document.
@@ -37,6 +25,20 @@ Additionally, you are solely responsible for testing, security and optimizing al
 (c) to include shortcuts in order to support rapid prototyping such as, but not limited to, relaxed authentication and authorization and a lack of strict adherence to security best practices.
 
 All work produced is open source. More information can be found in the GitHub repo.
+
+## Description:-
+This solution provides near real-time translation chat support through Amazon Connect, Amazon Transcribe, and serverless code through AWS Lambda. Translations that would take hours to complete manually are performed in moments and read back, in life-like speech, and in a member’s chosen language through Amazon Polly. This solution is designed to be a cost-effective, scalable, and secure solution for organizations that need to provide multilingual support to their customers.
+
+![Frontend Dashboard Image](assests/images/mlcc-demo.png)
+
+## High Level Architecture:-
+
+The architectural diagram for AWS Backend is:
+
+![API Reference Architecture](assests/images/MLCC-Architecturev1-2.drawio-3.png)
+
+# Prerequisites
+For the prerequisites, we need to have the following:
 
 ## Frontend Prerequisites:
 1. Node.js and npm 
